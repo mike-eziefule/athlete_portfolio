@@ -110,6 +110,15 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
 /* Back-to-Top Button */
 #backToTop {
     position: fixed;
