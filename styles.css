@@ -15,17 +15,17 @@ html {
 }
 
 .frame {
-    width: 250px;
+    width: 300px;
     height: 250px;
-    object-fit: fit;
     overflow: hidden;
-    
+    margin: auto;
 }
 
 .frame img {
     width: 100%;
-    height: auto;
-    
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 /* Navbar Styling */
@@ -52,7 +52,7 @@ html {
             rgba(0, 0, 0, 0.334),
             rgba(0, 0, 0, 0.76)
         ),
-        url("./media/cover_img.jpg") no-repeat left center/cover;
+        url("./media/cover_img.jpg") no-repeat left 20% center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,7 +141,7 @@ html {
     transition: color 0.3s ease;
 }
 #contact .social-links a:hover {
-    color: #0080ff;
+    color: #191a1b;
 }
 
 /* Footer */
