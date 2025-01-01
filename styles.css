@@ -52,7 +52,7 @@ html {
             rgba(0, 0, 0, 0.334),
             rgba(0, 0, 0, 0.76)
         ),
-        url("./media/cover_img.jpg") no-repeat left center/cover;
+        url("./media/cover_img.jpg") no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
