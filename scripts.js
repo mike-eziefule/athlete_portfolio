@@ -1,54 +1,34 @@
-// Back-to-Top Button
-const backToTopButton = document.getElementById("backToTop");
+// Scripts for Back-to-Top Button
+const backToTopButton = document.getElementById('backToTop');
 
-// Show or hide the button based on scroll position
 window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTopButton.style.display = "flex";
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = "block";
     } else {
         backToTopButton.style.display = "none";
     }
 };
 
-// Scroll smoothly to the top when the button is clicked
 backToTopButton.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Make Navbar Sticky
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-        navbar.classList.add('sticky-navbar');
-    } else {
-        navbar.classList.remove('sticky-navbar');
-    }
-});
-
-// Sliding Background for Hero Section
-const heroSection = document.querySelector('.hero-section');
-let currentImageIndex = 0;
-const backgroundImages = [
+// Random Image Display for Hero Section
+const heroImages = [
     'media/vector1.jpg',
     'media/vector2.jpg',
     'media/vector3.jpg',
     'media/vector4.jpg'
 ];
 
-setInterval(() => {
-    currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
-    heroSection.style.backgroundImage = `url(${backgroundImages[currentImageIndex]})`;
-}, 5000);
+const heroColumns = document.querySelectorAll('.hero-section .column');
+heroColumns.forEach(column => {
+    const randomIndex = Math.floor(Math.random() * heroImages.length);
+    column.querySelector('img').src = heroImages[randomIndex];
+});
+
+// Add Animation to Hero Section Images
+heroColumns.forEach((column, index) => {
+    column.style.animation = `slideIn 1s ease-in-out ${index * 0.3}s`;
+    column.style.animationFillMode = 'forwards';
+});
